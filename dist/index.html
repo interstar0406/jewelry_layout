@@ -88,28 +88,44 @@
 <!-- ////////////// Begin Main ////////////// -->
     <main>
       <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="box-radio">
-              <input id="fec" type="radio" name="check" value="1" checked>
-              <label for="fec">FeCredit</label>
-              <input id="pru" type="radio" name="check" value="2">
-              <label for="pru">Prudential</label>
-            </div>
-            <div class="content">
-              <label for="#dg">Giá sản phẩm ($)</label>
-              <input id="dg" type="number" name="gia" placeholder="Số tiền ($)" value="7190000">
-              <label for="#tt">Đưa trước ($)</label>
-              <input id="tt" type="number" name="tratruoc" placeholder="Đưa trước ($)" value="719000">
-              <label for="#thang">Số tháng muốn trả góp</label>
-              <div class="erro_thang"></div>
-              <input id="thang" type="number" name="thang" placeholder="tháng" value="6">
-              <label for="#cl">Số tiền còn lại phải góp ($)</label>
-              <input id="cl" type="number" name="conlai" placeholder="Còn lại" value="600" readOnly="true">
-              <label for="laisuat">Lãi suất</label>
-              <div id="laisuat"></div>
-              <div id="tinh">
-                <label for="gop">Số tiền góp (theo tháng):</label><span id="gop">0</span>
+        <div class="row mt-5">
+          <div class="col-sm-4">
+            <ul id="filter-list">
+              <li class="active" data-filter="0">All</li>
+              <li data-filter="1">Aaa</li>
+              <li data-filter="2">Bbb</li>
+              <li data-filter="3">Ccc</li>
+              <li data-filter="4">Ddd</li>
+            </ul>
+          </div>
+          <div class="col-sm-8">
+            <div class="row" id="list-item">
+              <div class="col mb-2" data-type="1">
+                <div class="item">AAAAAAAAAAAAAAAA</div>
+              </div>
+              <div class="col mb-2" data-type="2">
+                <div class="item">BBBBBBBBBBBBBBBBBBBBB</div>
+              </div>
+              <div class="col mb-2" data-type="3">
+                <div class="item">CCCCCCCCCCCCCCCCC</div>
+              </div>
+              <div class="col mb-2" data-type="4">
+                <div class="item">DDDDDDDDDDDDDDDDDDDDDDDD</div>
+              </div>
+              <div class="col mb-2" data-type="3">
+                <div class="item">CCCCCCCCCCCCCCCCC</div>
+              </div>
+              <div class="col mb-2" data-type="2">
+                <div class="item">BBBBBBBBBBBBBBBBBBBBB</div>
+              </div>
+              <div class="col mb-2" data-type="4">
+                <div class="item">DDDDDDDDDDDDDDDDDDDDDDDD</div>
+              </div>
+              <div class="col mb-2" data-type="3">
+                <div class="item">CCCCCCCCCCCCCCCCC</div>
+              </div>
+              <div class="col mb-2" data-type="1">
+                <div class="item">AAAAAAAAAAAAAAAA</div>
               </div>
             </div>
           </div>

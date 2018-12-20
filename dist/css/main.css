@@ -6340,50 +6340,14 @@ header {
 footer img {
   max-width: 200px; }
 
-.container {
-  padding-top: 3rem;
-  max-width: 400px;
-  font-size: 2rem; }
+body {
+  font-size: 1.5rem; }
 
-input {
-  font-size: 1.4rem; }
-
-.box-radio {
-  text-align: center; }
-  .box-radio input {
-    width: 20px;
-    height: 20px; }
-  .box-radio #pru {
-    margin-left: 1rem; }
-
-.content {
-  display: flex;
-  flex-direction: column; }
-  .content label {
-    margin-top: 1rem;
-    font-size: 1.2rem; }
-  .content input {
-    padding: 1rem;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.3); }
-  .content #tinh {
-    margin-top: 2rem; }
-  .content #gop {
-    margin-left: 2rem; }
-
-.focus {
+.active {
   color: red;
   font-weight: 700; }
 
-.unfocus {
-  color: rgba(0, 0, 0, 0.1); }
-
-#laisuat {
-  color: red; }
-
-.erro_thang {
-  color: red;
-  font-size: 1.2rem; }
+ul li {
+  list-style: none; }
 
 /*# sourceMappingURL=main.css.map */

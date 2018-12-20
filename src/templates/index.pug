@@ -9,30 +9,33 @@ block variables
 //- Phần khai báo body
 block body
 	.container
-		.row
-			.col
-				.box-radio
-					input#fec(type="radio", name="check" value='1' checked) 
-					label(for="fec") FeCredit
-					input#pru(type="radio", name="check" value='2') 
-					label(for="pru") Prudential
-				.content
-					//-gia sp
-					label(for="#dg") Giá sản phẩm ($)
-					input#dg(type="number" name="gia" placeholder='Số tiền ($)' value='7190000')
-					//-dua truoc
-					label(for="#tt") Đưa trước ($)
-					input#tt(type="number" name="tratruoc" placeholder='Đưa trước ($)' value='719000')
-					//-so thang
-					label(for="#thang") Số tháng muốn trả góp
-					.erro_thang
-					input#thang(type="number" name="thang" placeholder='tháng' value='6')
-					//-so tien con lai
-					label(for="#cl") Số tiền còn lại phải góp ($)
-					input#cl(type="number" name="conlai" placeholder='Còn lại' value='600' readOnly='true')
-					label(for="laisuat") Lãi suất
-					#laisuat
-					#tinh
-						label(for="gop") Số tiền góp (theo tháng):
-						span#gop 0
+		.row.mt-5
+			.col-sm-4
+				ul#filter-list
+					li.active(data-filter="0") All
+					li(data-filter="1") Aaa
+					li(data-filter="2") Bbb
+					li(data-filter="3") Ccc
+					li(data-filter="4") Ddd
+			.col-sm-8
+				.row#list-item
+					.col.mb-2(data-type="1")
+						.item AAAAAAAAAAAAAAAA
+					.col.mb-2(data-type="2")
+						.item BBBBBBBBBBBBBBBBBBBBB
+					.col.mb-2(data-type="3")
+						.item CCCCCCCCCCCCCCCCC
+					.col.mb-2(data-type="4")
+						.item DDDDDDDDDDDDDDDDDDDDDDDD
+					.col.mb-2(data-type="3")
+						.item CCCCCCCCCCCCCCCCC
+					.col.mb-2(data-type="2")
+						.item BBBBBBBBBBBBBBBBBBBBB
+					.col.mb-2(data-type="4")
+						.item DDDDDDDDDDDDDDDDDDDDDDDD
+					.col.mb-2(data-type="3")
+						.item CCCCCCCCCCCCCCCCC
+					.col.mb-2(data-type="1")
+						.item AAAAAAAAAAAAAAAA
+
 
