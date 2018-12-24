@@ -15,7 +15,7 @@
     "wsh"           : true,   // Windows Scripting Host.
 
     "jquery"        : true,
-    "ender"         : true,
+    "ender"         : false,
     "prototypejs"   : false,
     "mootools"      : false,
     "dojo"          : false,
