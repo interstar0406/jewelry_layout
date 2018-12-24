@@ -93,7 +93,7 @@ var data = {
 			return parseInt(result);
 		}
 	},
-	// Hàm kiểm tra valid số tiền trả trước 
+	// Hàm kiểm tra valid số tiền trả trước abc
 	check_traTruoc: function check_traTruoc() {
 		var a = true;
 		if (cuongAPP.check_value('tt') / cuongAPP.check_value('dg') * 100 > cuongAPP.check_data_cttc().val_thresHold) {
