@@ -19,13 +19,14 @@ block body
 				.content
 					//-gia sp
 					label(for="#dg") Giá sản phẩm ($)
-					input#dg(type="number" name="gia" placeholder='Số tiền ($)' value='7190000')
+					input#dg(type="number" name="gia" placeholder='Số tiền ($)' value='2000')
 					//-dua truoc
 					label(for="#tt") Đưa trước ($)
-					input#tt(type="number" name="tratruoc" placeholder='Đưa trước ($)' value='719000')
+					.erro_duatruoc.focus
+					input#tt(type="number" name="tratruoc" placeholder='Đưa trước ($)' value='500')
 					//-so thang
 					label(for="#thang") Số tháng muốn trả góp
-					.erro_thang
+					.erro_thang.focus
 					input#thang(type="number" name="thang" placeholder='tháng' value='6')
 					//-so tien con lai
 					label(for="#cl") Số tiền còn lại phải góp ($)

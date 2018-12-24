@@ -6343,7 +6343,7 @@ footer img {
 .container {
   padding-top: 3rem;
   max-width: 400px;
-  font-size: 2rem; }
+  font-size: 1.2rem; }
 
 input {
   font-size: 1.4rem; }
@@ -6381,6 +6381,9 @@ input {
 
 #laisuat {
   color: red; }
+
+#laisuat, #gop {
+  font-size: 1.8rem; }
 
 .erro_thang {
   color: red;

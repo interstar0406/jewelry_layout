@@ -68,9 +68,20 @@ var data = {
 				return parseInt(result)
 			}
 		},
+		// Hàm kiểm tra valid số tiền trả trước 
 		check_traTruoc: () => {
+			let a = true
+			if ((cuongAPP.check_value('tt') / cuongAPP.check_value('dg') * 100) > (cuongAPP.check_data_cttc().val_thresHold)) {
+				$('.erro_duatruoc').html('Số tiền đưa trước không hợp lệ')
+				$('#tt').focus()
+				$('#tt').val('')
+				a = false
+			} else {
+				$('.erro_duatruoc').html('')
+				a = true
+			}
 			// nếu vượt quá số tiền trả trước cho phép thì false
-			return (cuongAPP.check_value('tt') / cuongAPP.check_value('dg') * 100) > (cuongAPP.check_data_cttc().val_thresHold) ? false : true
+			return a
 		},
 		// hàm trả về id công ty tài chính 
 		check_radio: () => {
@@ -113,7 +124,7 @@ var data = {
 					}
 				}
 			}
-			if (obj.val_laisuat === null) {
+			if (obj.val_laisuat === null) {		// số tháng non-valid -> val_laisuat unset
 				$('#laisuat').html("null")
 				$('.erro_thang').html('*Kỳ hạn vay không hợp lệ.')
 			}
