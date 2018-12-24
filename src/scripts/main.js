@@ -50,6 +50,7 @@ var data = {
 			$('#gop').html(cuongAPP.tinh())
 			$('input').on('change', function () {
 				$('#gop').html(cuongAPP.tinh())
+				alert('Học phí đầy đủ nghe chưa') // :)
 			})
 		},
 		tinh: () => {
