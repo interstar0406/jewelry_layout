@@ -5,7 +5,7 @@ var data = {
 				id: 1,
 				name: 'FeCredit',
 				threshold: 50, // ngưỡng tối đa mà công ty tài chính cho phép trả trước
-				interestRate: [{
+				interestRate: [{ // các gói ls ùy theo kỳ hạn trả góp 
 						ls: 3.7,
 						so_thang: {
 							min: 3,
@@ -61,8 +61,8 @@ var data = {
 				laisuat = cuongAPP.check_data_cttc().val_laisuat
 			conLai = donGia - traTruoc
 			$('#cl').val(conLai)
-			if (!cuongAPP.check_traTruoc()) {
-				return 'erro'
+			if (!cuongAPP.check_traTruoc() || laisuat === null) {
+				return 'ERRO'
 			} else {
 				result = (conLai / soThang) * laisuat / 100 + (conLai / soThang)
 				return parseInt(result)
@@ -88,11 +88,10 @@ var data = {
 		},
 		// hàm lấy ngưỡng trả trước cho phép và lãi suất theo số tháng công ty tài chính qui định
 		check_data_cttc: () => {
-			let thang = cuongAPP.check_value('thang'), // get số tháng
-				obj = {
-					val_thresHold: 0,
-					val_laisuat: 0
-				}
+			let obj = {
+				val_thresHold: 0,
+				val_laisuat: null
+			}
 			for (let key in data.lists) {
 				if (data.lists.hasOwnProperty(key)) {
 					let element = data.lists[key];
@@ -101,16 +100,23 @@ var data = {
 						let ds_ls = element.interestRate //get danh sách gói lãi suất theo tháng
 						for (let key_interestRate in ds_ls) {
 							if (ds_ls.hasOwnProperty(key_interestRate)) {
-								let el = ds_ls[key_interestRate];
-								if (el.so_thang.min < thang && thang <= el.so_thang.max) {
+								let el = ds_ls[key_interestRate],
+									thang = cuongAPP.check_value('thang') // get tháng từ input để so sánh và lấy ra gói lãi suất phù hợp
+								if (el.so_thang.min < thang && thang <= el.so_thang.max) { //check lãi suất theo tháng
 									obj.val_laisuat = el.ls
+									$('.erro_thang').html('')
+									$('#laisuat').html(obj.val_laisuat + ' %')
 								}
 							}
+
 						}
 					}
 				}
 			}
-			$('#laisuat').html(obj.val_laisuat+' %')
+			if (obj.val_laisuat === null) {
+				$('#laisuat').html("null")
+				$('.erro_thang').html('*Kỳ hạn vay không hợp lệ.')
+			}
 			return obj
 		}
 	}
